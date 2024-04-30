@@ -1,0 +1,19 @@
+#backgroundLogin {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    135deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 33%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+  font-size: xx-large;
+}
+
+#emailHelp{
+    color: rgba(245, 245, 245, 0.611);
+}
+
+.form-control{
+    font-size: 28px;
+}
