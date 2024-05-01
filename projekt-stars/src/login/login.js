@@ -2,11 +2,17 @@ import React from 'react';
 import './login.css';
 import { nothingImportantTrustMe } from './nothingImportantTrustMe';
 import { useNavigate } from "react-router-dom"; 
+import { Flip, Slide, ToastContainer, Zoom, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Login() {
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
   const navigate = useNavigate();
+  const succesToast = () => toast.success("Login erfolgreich!", { autoClose: 3000, theme: 'colored', transition: Slide });
+  const failToast = () => toast.error("Fehler bei der Eingabe! Sie Pflaume!", { autoClose: 3000, theme: 'colored', transition: Slide });
+  // Toast installieren: https://www.npmjs.com/package/react-toastify?activeTab=readme
+  // hier sind die Informationen zum Toast: https://fkhadra.github.io/react-toastify/introduction/
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -22,14 +28,13 @@ export default function Login() {
 
     const user = nothingImportantTrustMe.find(user => user.name === username && user.password === password);
     if (user) {
-      alert('Erfolgreich eingeloggt!');
-      navigate('/dashboard/Board');
+      succesToast();
+      setTimeout(() => {
+        navigate('/dashboard/Board')
+      }, 4000);
       
-
-
     } else {
-      alert('Fehler beim Login!');
-      console.log(user);
+      failToast();
     }
   }
 
@@ -45,8 +50,9 @@ export default function Login() {
           <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
           <input type="password" value={password} onChange={handleInputChange} className="form-control" name="password" id="password"></input>
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary" >Submit</button>
       </form>
+      <ToastContainer style={{width:'30%'}} />
     </div>
 
   )
