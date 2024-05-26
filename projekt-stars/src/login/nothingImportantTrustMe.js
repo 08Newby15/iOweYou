@@ -1,11 +1,19 @@
 
 import LoginTemplate from "./LoginTemplate";
 
-export const nothingImportantTrustMe = [
-    new LoginTemplate(1,"Daniel", "1", 5),
-    new LoginTemplate(2, "Gent", "1234", 5),
-    new LoginTemplate(3, "Alex", "Password", 5),
-    new LoginTemplate(4, "Sophia", "Password", 5)
-    
+// Initialisiere die Standardbenutzerinformationen
+const defaultUserInfos = [
+    new LoginTemplate(1, "D", "1", 0, [], []),
+    new LoginTemplate(2, "G", "1234", 0, [], []),
+    new LoginTemplate(3, "A", "Password", 0, [], []),
+    new LoginTemplate(4, "S", "Kaktus", 0, [], [])
 ];
+
+const storedUserInfos = localStorage.getItem('userInformation');
+
+if (!storedUserInfos) {
+    localStorage.setItem('userInformation', JSON.stringify(defaultUserInfos));
+}
+
+export const nothingImportantTrustMe = storedUserInfos ? JSON.parse(storedUserInfos) : defaultUserInfos;
 

@@ -17,3 +17,28 @@
 .form-control{
     font-size: 28px;
 }
+
+.popup {
+  position: fixed;
+  top: 50%;
+  right: 5%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(14, 125, 199);
+  padding: 17px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 18px;
+}
+
+#forgotUserData{
+      color: rgba(245, 245, 245, 0.611);
+      cursor:pointer;
+}

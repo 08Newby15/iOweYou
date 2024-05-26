@@ -1,0 +1,27 @@
+#backgroundPersonInfo {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    135deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 33%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+  font-size: xx-large;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#rowPerson {
+  margin-top: 5%;
+  --bs-gutter-x: 0rem;
+}
+
+#textLeft {
+  padding-left: 100px;
+  text-align: left;
+}
+
+#starField{
+  margin-top: 5%;
+}
